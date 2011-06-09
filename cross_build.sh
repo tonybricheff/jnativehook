@@ -3,6 +3,7 @@
 for file in ./build.properties.*
 do
 	ant clean
-	cp -v $file ./build.properties
-	ant compile
+	ant -propertyfile $file compile
 done
+
+ant package
