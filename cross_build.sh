@@ -1,5 +1,5 @@
 #!/bin/sh
-#test
+
 for file in ./build.properties.*
 do
 	ant clean
