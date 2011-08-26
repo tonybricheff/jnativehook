@@ -2,12 +2,12 @@
 
 project.debug=false
 java.target=1.5
-native.os=linux
 native.arch=i586
-native.cc=/usr/bin/gcc
-native.ld=/usr/bin/gcc
+native.os=linux
+native.cc=/usr/bin/x86_64-pc-linux-gnu-gcc
+native.ld=/usr/bin/x86_64-pc-linux-gnu-gcc
 native.make=/usr/bin/make
-native.strip=/usr/bin/strip
+native.strip=/usr/bin/x86_64-pc-linux-gnu-strip
 native.cflags=-c -m32 -march\=i586 -mtune\=generic -std\=c99 -pedantic -D_POSIX_C_SOURCE\=199506 -Wall -O2 -fomit-frame-pointer -fno-strict-aliasing
 native.ldflags=-shared -m32 -W1,--as-needed,-O1
 native.libs=-L/lib32 -L/usr/lib32
