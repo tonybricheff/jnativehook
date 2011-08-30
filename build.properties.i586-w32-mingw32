@@ -1,4 +1,4 @@
-#ant configure for windows x86
+#ant configure for windows i586
 
 project.debug=false
 java.target=1.5
@@ -10,5 +10,5 @@ native.make=/usr/bin/make
 native.strip=/usr/bin/i686-w64-mingw32-strip
 native.cflags=-c -m32 -march\=i586 -mtune\=generic -std=c99 -pedantic -Wall -O2 -fno-strict-aliasing
 native.ldflags=-shared -m32 -Wl,--as-needed,--kill-at,-O1
-native.libs=-L/root/crossdev/x86_64-w32-mingw32/cross_win32/mingw/lib
+native.libs=-L/usr/i686-w64-mingw32/lib
 native.includes=-I/root/crossdev/x86_64-w64-mingw32/win32_jdk/include -I/root/crossdev/x86_64-w64-mingw32/win32_jdk/include/win32

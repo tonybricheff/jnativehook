@@ -1,7 +1,7 @@
-#ant configure for linux x86_64
+#ant configure for linux x86-64
 
-project.debug=false
 java.target=1.5
+project.debug=false
 native.arch=x86-64
 native.os=linux
 native.cc=/usr/bin/x86_64-pc-linux-gnu-gcc
@@ -11,4 +11,4 @@ native.strip=/usr/bin/x86_64-pc-linux-gnu-strip
 native.cflags=-c -m64 -march\=x86-64 -mtune\=generic -std\=c99 -pedantic -D_POSIX_C_SOURCE\=199506 -Wall -O2 -fomit-frame-pointer -fno-strict-aliasing -fPIC
 native.ldflags=-shared -m64 -W1,--as-needed,-O1
 native.libs=-L/usr/lib64
-native.includes=-I/usr/lib/jvm/sun-jdk-1.6/include -I/usr/lib/jvm/sun-jdk-1.6/include/linux -I/usr/include -I/usr/local/include
+native.includes=-I/usr/include -I/usr/local/include -I/usr/lib/jvm/sun-jdk-1.6/include -I/usr/lib/jvm/sun-jdk-1.6/include/linux
