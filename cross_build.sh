@@ -2,7 +2,7 @@
 
 for file in ./build.properties.*
 do
-	ant -propertyfile $file clean compile
+	ant -propertyfile $file clean compile || exit $?
 done
 
 ant package
