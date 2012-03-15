@@ -11,5 +11,5 @@ native.ld.args2==-L/lib64 -L/usr/lib64 -lX11 -lXt -lXtst -o
 native.strip=/usr/bin/x86_64-pc-linux-gnu-strip
 native.strip.args=-v --strip-unneeded -R .comment
 
-native.arch=x86-64
+native.arch.name=x86-64
 native.os=linux
