@@ -7,7 +7,7 @@ ant deep-clean compile-java
 for file in ${DIR}/build.*.properties
 do
 	rm -Rvf ./bin/obj/ ./build.properties
-	ant -propertyfile $file compile-native strip-native || exit $?
+	ant -propertyfile $file compile-native || exit $?
 done
 
 ant package
