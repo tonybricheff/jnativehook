@@ -1,0 +1,12 @@
+#ant configure for linux i586
+
+ant.build.javac.include=/etc/java-config-2/current-system-vm/include
+
+ant.build.native.arch=armv6
+ant.build.native.os=linux
+
+ant.build.native.compiler=armv6j-hardfloat-linux-gnueabi
+ant.build.native.linker=armv6j-hardfloat-linux-gnuebi
+#-fno-stack-protector-strong
+ant.build.native.cflags=-m32 -march\=armv6j -mtune\=generic -Os -g -pipe -fdata-sections -ffunction-sections -fpredictive-commoning -fomit-frame-pointer -flto -fno-stack-protector
+ant.build.native.ldflags=-m32 -Wl,--as-needed,-O1 -flto
