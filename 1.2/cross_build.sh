@@ -24,4 +24,8 @@ do
 	ant -propertyfile $file compile-libuiohook compile-jni || exit $?
 done
 
+# Hack to put the armv6j binary in the correct place.
+# TODO Use lipo to try and create a fat binary for v6 + v7
+mv -v ./lib/linux/armv6j ./lib/linux/arm
+
 ant package
