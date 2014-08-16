@@ -110,6 +110,42 @@
 		</delete>
 	</target>
 
+	<target name="download-jnitasks" depends="init" unless="project.check.jnitasks.download" description="Download and initialize the native library.">
+		<echo>Downloading JNITasks source...</echo>
+		<mkdir dir="${dir.src}/jnitasks" />
+
+		<get src="https://github.com/kwhat/jnitasks/archive/master.zip" dest="${dir.bin}/jnitasks-master.zip" verbose="true" />
+
+		<unzip src="${dir.bin}/jnitasks-master.zip" dest="${dir.src}/jnitasks">
+			<mapper type="glob" from="jnitasks-master/*" to="*"/>
+		</unzip>
+	</target>
+
+
+	<target name="compile-jnitasks" depends="download-jnitasks" description="Download and initialize the native library.">
+		<echo>Compiling JNITasks source...</echo>
+
+		<ant antfile="${dir.src}/jnitasks/build.xml" dir="${dir.src}/jnitasks">
+			<target name="compile" />
+			<target name="jar" />
+			
+			<!-- We need to override the src and bin locations. -->
+			<property name="dir.bin" value="${dir.bin}/jnitasks" />
+			<property name="dir.src" value="${dir.src}/jnitasks/src" />
+
+			<!-- Set a few of the configurable properties. -->
+			<property name="ant.build.debug" value="${ant.build.debug}" />
+			<property name="ant.build.javac.compiler" value="${ant.build.javac.compiler}" />
+			<property name="ant.build.javac.source" value="${ant.build.javac.source}" />
+			<property name="ant.build.javac.target" value="${ant.build.javac.target}" />
+			<property name="ant.build.javac.args" value="${ant.build.javac.args}" />
+		</ant>
+
+		<!-- typedef file="${dir.src}/jnitasks/src/org/jnitasks/antlib.xml" classpath="${dir.bin}/jnitasks" /-->
+		<copy overwrite="true" todir="${dir.project}/jar">
+			<fileset dir="???" includes="**/*" />
+		</copy>
+	</target>
 
 	<target name="download-jnativehook" depends="configure" unless="project.check.jnativehook.download" description="Download and initialize the native library.">
 		<echo>Downloading JNativeHook source...</echo>
