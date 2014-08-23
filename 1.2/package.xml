@@ -248,7 +248,6 @@
 		<ant antfile="build.xml" dir="jnativehook" target="package" inheritAll="false">
 			<property name="ant.build.major" value="1" />
 			<property name="ant.build.minor" value="2" />
-			<property name="ant.build.revision" value="0_rc1" />
 		</ant>
 	</target>
 
