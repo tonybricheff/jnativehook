@@ -180,6 +180,12 @@
 			</condition>
 		</fail>
 		
+		<delete includeEmptyDirs="true" verbose="true" failonerror="false">
+			<fileset dir="jnativehook/bin/libuiohook" />
+			<fileset dir="jnativehook/bin/obj" />
+			<fileset dir="jnativehook/bin/lib" />
+		</delete>
+		
 		<echo>Compiling for ${ant.build.native.host}...</echo>
 		<ant antfile="build.xml" dir="jnativehook" inheritAll="false">
 			<target name="compile-libuiohook" />
@@ -187,12 +193,6 @@
 			
 			<property file="${ant.build.native.host}.properties" />
 		</ant>
-		
-		<delete includeEmptyDirs="true" verbose="true" failonerror="false">
-			<fileset dir="jnativehook/bin/libuiohook" />
-			<fileset dir="jnativehook/bin/obj" />
-			<fileset dir="jnativehook/bin/lib" />
-		</delete>
 	</target>
 
 
