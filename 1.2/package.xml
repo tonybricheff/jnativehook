@@ -187,11 +187,11 @@
 		</delete>
 		
 		<echo>Compiling for ${ant.build.native.host}...</echo>
-		<ant antfile="build.xml" dir="jnativehook" inheritAll="false">
+		<ant antfile="build.xml" dir="jnativehook" inheritAll="true">
 			<target name="compile-libuiohook" />
 			<target name="compile-jni" />
 			
-			<property file="${ant.build.native.host}.properties" />
+			<!-- property file="${ant.build.native.host}.properties" /-- >
 		</ant>
 	</target>
 
@@ -232,16 +232,8 @@
 		</ant>
 		
 		<ant antfile="package.xml" target="-compile-cross" dir="${basedir}" inheritAll="false">
-			<property file="arm-hardfloat-linux-gnueabihf.properties" />
-		</ant>
-		
-		<!-- ant antfile="package.xml" target="-compile-cross" dir="${basedir}" inheritAll="false">
 			<property file="armv6j-hardfloat-linux-gnueabihf.properties" />
 		</ant>
-		
-		<ant antfile="package.xml" target="-compile-cross" dir="${basedir}" inheritAll="false">
-			<property file="armv7a-hardfloat-linux-gnueabihf.properties" />
-		</ant-->
 	</target>
 	
 	<target name="package" depends="" description="Creates zip files for distribution.">
