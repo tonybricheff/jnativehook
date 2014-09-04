@@ -191,7 +191,7 @@
 			<target name="compile-libuiohook" />
 			<target name="compile-jni" />
 			
-			<!-- property file="${ant.build.native.host}.properties" /-- >
+			<!-- property file="${ant.build.native.host}.properties" / -->
 		</ant>
 	</target>
 
