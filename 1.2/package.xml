@@ -237,9 +237,14 @@
 	</target>
 	
 	<target name="package" depends="" description="Creates zip files for distribution.">
+		<tstamp>
+			<format property="ant.build.revision" pattern="yyyyMMdd" />
+		</tstamp>
+	
 		<ant antfile="build.xml" dir="jnativehook" target="package" inheritAll="false">
 			<property name="ant.build.major" value="1" />
 			<property name="ant.build.minor" value="2" />
+			<property name="ant.build.revision" value="${ant.build.revision}" />
 		</ant>
 	</target>
 
