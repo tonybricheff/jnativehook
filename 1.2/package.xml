@@ -31,7 +31,7 @@
 		<property name="ant.build.debug" value="true" />
 		<property name="ant.build.javac.compiler" value="modern" />
 		<property name="ant.build.javac.source" value="1.5" />
-		<property name="ant.build.javac.target" value="1.7" /> 
+		<property name="ant.build.javac.target" value="1.5" /> 
 
 		<!-- Preform download target checks. -->
 		<available file="jnitasks/build.xml" property="project.check.jnitasks.download" />
