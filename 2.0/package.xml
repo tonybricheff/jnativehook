@@ -111,8 +111,10 @@
 			<fileset dir="jnitasks" />
 			<fileset dir="jnativehook" />
 			
-			<fileset file="jnativehook-master.zip"/>
-			<fileset file="jnitasks-master.zip"/>
+			<fileset file="jnativehook-2.0.zip" />
+			<fileset file="jnitasks-0.2.zip" />
+
+			<fileset file="package.properties" />
 		</delete>
 	</target>
 
@@ -121,10 +123,10 @@
 		<echo>Downloading JNITasks source...</echo>
 		<mkdir dir="${basedir}/jnitasks" />
 
-		<get src="https://github.com/kwhat/jnitasks/archive/master.zip" dest="jnitasks-master.zip" verbose="true" />
+		<get src="https://github.com/kwhat/jnitasks/archive/0.2.zip" dest="jnitasks-0.2.zip" verbose="true" />
 
-		<unzip src="jnitasks-master.zip" dest="${basedir}/jnitasks">
-			<mapper type="glob" from="jnitasks-master/*" to="*"/>
+		<unzip src="jnitasks-0.2.zip" dest="${basedir}/jnitasks">
+			<mapper type="glob" from="jnitasks-0.2/*" to="*"/>
 		</unzip>
 		
 		<!-- Fix clock skew. -->
@@ -144,7 +146,7 @@
 			<!-- We need to override the src and bin locations. -->
 			<property name="dir.bin" value="${basedir}/jnitasks/bin" />
 			<property name="dir.src" value="${basedir}/jnitasks/src" />
-			<property name="dir.jar" value="${basedir}/jnativehook/jar" />
+			<property name="dir.jar" value="${basedir}/jnativehook" />
 
 			<!-- Set a few of the configurable properties. -->
 			<property name="ant.build.debug" value="${ant.build.debug}" />
@@ -159,9 +161,9 @@
 	<target name="download-jnativehook" depends="configure" unless="project.check.jnativehook.download" description="Download and initialize the native library.">
 		<echo>Downloading JNativeHook source...</echo>
 
-		<get src="https://github.com/kwhat/jnativehook/archive/master.zip" dest="jnativehook-master.zip" verbose="true" />
-		<unzip src="jnativehook-master.zip" dest="jnativehook">
-			<mapper type="glob" from="jnativehook-master/*" to="*"/>
+		<get src="https://github.com/kwhat/jnativehook/archive/2.0.zip" dest="jnativehook-2.0.zip" verbose="true" />
+		<unzip src="jnativehook-2.0.zip" dest="jnativehook">
+			<mapper type="glob" from="jnativehook-2.0/*" to="*"/>
 		</unzip>
 		
 		<!-- Fix clock skew. -->
