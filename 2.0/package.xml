@@ -254,7 +254,6 @@
 		<echo>Creating Maven Archives...</echo>
 		<mkdir dir="${dir.maven}" />
 
-		<echo file="${dir.maven}/pom.xml">
 		<copy tofile="${dir.maven}/pom.xml" overwrite="true" file="pom.xml.in">
 			<filterchain>
 				<replacetokens>
