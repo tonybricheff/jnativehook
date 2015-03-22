@@ -250,9 +250,9 @@
 		</ant>
 	</target>
 
-	<target name="deploy" depends="javadoc,jar" description="Creates files required for maven deployment.">
+	<target name="deploy" description="Creates files required for maven deployment.">
 		<echo>Creating Maven Archives...</echo>
-		<mkdir dir="${dir.maven}" />
+		<mkdir dir="maven" />
 
 		<copy tofile="${dir.maven}/pom.xml" overwrite="true" file="pom.xml.in">
 			<filterchain>
@@ -266,15 +266,15 @@
 		<property name="jar.maven.name" value="${ant.project.name}-${ant.build.major}.${ant.build.minor}.${ant.build.revision}" />
 
 		<echo>Creating ${jar.maven.base}.jar...</echo>
-		<copy file="${dir.jar}/${ant.project.name}.jar" tofile="${dir.maven}/${jar.maven.name}.jar"/>
+		<copy file="${dir.jar}/${ant.project.name}.jar" tofile="maven/${jar.maven.name}.jar"/>
 
 		<echo>Creating ${jar.maven.base}-sources.jar...</echo>
-		<jar jarfile="${dir.maven}/${jar.maven.name}-sources.jar" basedir="${dir.src}" update="true" compress="true" level="9">
+		<jar jarfile="maven/${jar.maven.name}-sources.jar" basedir="${dir.src}" update="true" compress="true" level="9">
 			<include name="**/*" />
 		</jar>
 
 		<echo>Creating ${jar.base.name}-javadoc.jar...</echo>
-		<jar jarfile="${dir.maven}/${jar.maven.name}-javadoc.jar" basedir="${dir.doc}" update="true" compress="true" level="9">
+		<jar jarfile="maven/${jar.maven.name}-javadoc.jar" basedir="${dir.doc}" update="true" compress="true" level="9">
 			<include name="**/*" />
 		</jar>
 
@@ -282,17 +282,17 @@
 		<echo>Creating GPG signature for jars...</echo>
 		<exec executable="gpg2" failonerror="true">
 			<arg value="-ab" />
-			<arg value="${dir.maven}/${jar.maven.name}.jar" />
+			<arg value="maven/${jar.maven.name}.jar" />
 		</exec>
 
 		<exec executable="gpg2" failonerror="true">
 			<arg value="-ab" />
-			<arg value="${dir.maven}/${jar.maven.name}-sources.jar" />
+			<arg value="maven/${jar.maven.name}-sources.jar" />
 		</exec>
 
 		<exec executable="gpg2" failonerror="true">
 			<arg value="-ab" />
-			<arg value="${dir.maven}/${jar.maven.name}-javadoc.jar" />
+			<arg value="maven/${jar.maven.name}-javadoc.jar" />
 		</exec>
 
 		<!-- Unfortunately we cannot use maven to sign because Gentoo does not support maven.  -->
@@ -302,7 +302,7 @@
 			<arg value="-DrepositoryId=local" />
 			<arg value="-Darguments=&quot;gpg.passphrase=jnativehook-debug&quot;" />
 			<arg value="-DpomFile=pom.xml" />
-			<arg value="-Dfile=${dir.maven}/${jar.maven.name}.jar" />
+			<arg value="-Dfile=maven/${jar.maven.name}.jar" />
 			<arg value="-Pgpg" />
 		</mvn -->
 	</target>
