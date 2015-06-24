@@ -300,7 +300,7 @@
 			id="maven.project.pom"
 			groupId="com.1stleg"
 			artifactId="jnativehook"
-			version="${ant.build.major}.${ant.build.minor}-SNAPSHOT"
+			version="${ant.build.major}.${ant.build.minor}.SNAPSHOT"
 			name="JNativeHook"
 			description="Global keyboard and mouse listeners for Java."
 	        url="https://github.com/kwhat/jnativehook"
