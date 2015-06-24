@@ -268,7 +268,7 @@
 	
 	<target name="maven-snapshot" description="Creates files required for maven deployment.">
 		<!-- Define the Maven Ant tasks provided by classpathref. -->
-		<typedef resource="org/apache/maven/artifact/ant/antlib.xml" classpathref="ant.project.classpath" onerror="failall" />
+		<typedef resource="org/apache/maven/artifact/ant/antlib.xml" classpathref="ant.project.class.path" onerror="failall" />
 		
 		<!-- defined maven snapshots and staging repository urls. -->
 		<property name="maven.repository.snapshots.url" value="https://oss.sonatype.org/content/repositories/snapshots" />
@@ -327,7 +327,7 @@
 			<arg value="-Pgpg" />
 		</mvn>
 
-		<!-- mvn>
+		<mvn>
 			<arg value="org.apache.maven.plugins:maven-gpg-plugin:1.3:sign-and-deploy-file" />
 			<arg value="-Durl=${maven.repository.snapshots.url}" />
 			<arg value="-DrepositoryId=${maven.repository.id}" />
@@ -346,7 +346,7 @@
 			<arg value="-DpomFile=pom.xml" />
 			<arg value="-Dfile=${dir.maven}/${maven.jar.base}-javadoc.jar" />
 			<arg value="-Pgpg" />
-		</mvn -->
+		</mvn>
 	</target>
 	
 	<target name="all" depends="compile,package" description="Compile all source files and create the jar library.">
