@@ -1,4 +1,4 @@
-ant.importBuild("build.xml")
+ant.importBuild("jnativehook/build.xml")
 
 repositories {
     jcenter()
