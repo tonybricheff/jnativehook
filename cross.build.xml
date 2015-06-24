@@ -218,31 +218,31 @@
 			<property name="ant.build.javac.args" value="-bootclasspath ${ant.build.javac.bootclasspath}" />
 		</ant>
 		
-		<ant antfile="package.xml" target="-compile-cross" dir="${basedir}" inheritAll="false">
+		<ant antfile="cross.build.xml" target="-compile-cross" dir="${basedir}" inheritAll="false">
 			<property file="targets/x86_64-w64-mingw32.properties" />
 		</ant>
 		
-		<ant antfile="package.xml" target="-compile-cross" dir="${basedir}" inheritAll="false">
+		<ant antfile="cross.build.xml" target="-compile-cross" dir="${basedir}" inheritAll="false">
 			<property file="targets/x86_64-pc-linux-gnu.properties" />
 		</ant>
 		
-		<ant antfile="package.xml" target="-compile-cross" dir="${basedir}" inheritAll="false">
+		<ant antfile="cross.build.xml" target="-compile-cross" dir="${basedir}" inheritAll="false">
 			<property file="targets/x86_64-apple-darwin9.properties" />
 		</ant>
 		
-		<ant antfile="package.xml" target="-compile-cross" dir="${basedir}" inheritAll="false">
+		<ant antfile="cross.build.xml" target="-compile-cross" dir="${basedir}" inheritAll="false">
 			<property file="targets/i586-w32-mingw32.properties" />
 		</ant>
 		
-		<ant antfile="package.xml" target="-compile-cross" dir="${basedir}" inheritAll="false">
+		<ant antfile="cross.build.xml" target="-compile-cross" dir="${basedir}" inheritAll="false">
 			<property file="targets/i586-pc-linux-gnu.properties" />
 		</ant>
 		
-		<ant antfile="package.xml" target="-compile-cross" dir="${basedir}" inheritAll="false">
+		<ant antfile="cross.build.xml" target="-compile-cross" dir="${basedir}" inheritAll="false">
 			<property file="targets/i586-apple-darwin9.properties" />
 		</ant>
 		
-		<ant antfile="package.xml" target="-compile-cross" dir="${basedir}" inheritAll="false">
+		<ant antfile="cross.build.xml" target="-compile-cross" dir="${basedir}" inheritAll="false">
 			<property file="targets/armv6j-hardfloat-linux-gnueabihf.properties" />
 		</ant>
 	</target>
