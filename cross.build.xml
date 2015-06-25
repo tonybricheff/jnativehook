@@ -302,7 +302,7 @@
 			<include name="src/libuiohook/include/uiohook.h" />
 			<include name="src/libuiohook/m4/ax_*.m4" />
 			<include name="src/libuiohook/man/*" />
-			<include name="src/pc/uiohook.pc.in" />
+			<include name="src/libuiohook/pc/uiohook.pc.in" />
 			<include name="src/libuiohook/src/**/*" />
 			<include name="src/libuiohook/test/**/*" />
 
