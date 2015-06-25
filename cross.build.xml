@@ -288,7 +288,31 @@
 		<copy file="jnativehook/jar/jnativehook-${ant.build.major}.${ant.build.minor}.${ant.build.revision}.jar" tofile="${dir.maven}/${maven.jar.base}.jar"/>
 		
 		<jar jarfile="${dir.maven}/${maven.jar.base}-sources.jar" basedir="jnativehook/src" update="true" compress="true" level="9">
-			<include name="**/*" />
+			<include name="java/**/*" />
+			<include name="jni/**/*" />
+			<include name="test/**/*" />
+			<exclude name="jni/include/org_jnativehook_GlobalScreen.h" />
+			<exclude name="jni/include/org_jnativehook_GlobalScreen_EventDispatchTask.h" />
+			<exclude name="jni/include/org_jnativehook_GlobalScreen_NativeHookThread.h" />
+
+			<include name="libuiohook/include/uiohook.h" />
+			<include name="libuiohook/m4/ax_*.m4" />
+			<include name="libuiohook/man/*" />
+			<include name="pc/uiohook.pc.in" />
+			<include name="libuiohook/src/**/*" />
+			<include name="libuiohook/test/**/*" />
+
+			<include name="libuiohook/AUTHORS" />
+			<include name="libuiohook/bootstrap.sh" />
+			<include name="libuiohook/*.am" />
+			<include name="libuiohook/*.md" />
+			<include name="libuiohook/*.ac" />
+
+			<include name="build.*" />
+			<include name="AUTHORS" />
+			<include name="*.md" />
+
+			<exclude name="build.properties" />
 		</jar>
 
 		<jar jarfile="${dir.maven}/${maven.jar.base}-javadoc.jar" basedir="jnativehook/doc" update="true" compress="true" level="9">
@@ -333,7 +357,7 @@
 			<arg value="-DrepositoryId=${maven.repository.id}" />
 			<arg value="-Darguments=&quot;gpg.passphrase=${maven.gpg.password}&quot;" />
 			<arg value="-DpomFile=pom.xml" />
-			<arg value="-Dfile=${dir.maven}/${maven.jar.base}-source.jar" />
+			<arg value="-Dfile=${dir.maven}/${maven.jar.base}-sources.jar" />
 			<arg value="-Dclassifier=javadoc" />
 			<arg value="-Pgpg" />
 		</mvn>
