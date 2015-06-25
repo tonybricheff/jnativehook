@@ -346,6 +346,7 @@
 		<writepom pomRefId="maven.pom.id" file="pom.xml" trim="true" />
 
 		<echo>Create GPG signatures and deploy jars...</echo>
+		<!-- Maven Version is required because gentoo doesnt support maven, again. -->
 		<mvn mavenVersion="2.2.1">
 			<arg value="org.apache.maven.plugins:maven-gpg-plugin:1.6:sign-and-deploy-file" />
 			<arg value="-Durl=${maven.repository.url}" />
@@ -355,7 +356,7 @@
 			<arg value="-Pgpg" />
 		</mvn>
 
-		<mvn>
+		<mvn mavenVersion="2.2.1">
 			<arg value="org.apache.maven.plugins:maven-gpg-plugin:1.6:sign-and-deploy-file" />
 			<arg value="-Durl=${maven.repository.url}" />
 			<arg value="-DrepositoryId=${maven.repository.id}" />
@@ -365,7 +366,7 @@
 			<arg value="-Pgpg" />
 		</mvn>
 		
-		<mvn>
+		<mvn mavenVersion="2.2.1">
 			<arg value="org.apache.maven.plugins:maven-gpg-plugin:1.6:sign-and-deploy-file" />
 			<arg value="-Durl=${maven.repository.url}" />
 			<arg value="-DrepositoryId=${maven.repository.id}" />
