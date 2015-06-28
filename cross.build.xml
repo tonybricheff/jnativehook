@@ -129,6 +129,7 @@
 		<delete includeEmptyDirs="true" verbose="true" failonerror="false">
 			<fileset dir="jnitasks" />
 			<fileset dir="jnativehook" />
+			<fileset dir="${dir.maven}" />
 			
 			<fileset file="jnativehook-2.0.zip" />
 			<fileset file="jnitasks-0.2.zip" />
