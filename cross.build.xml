@@ -134,6 +134,8 @@
 			<fileset file="jnitasks-0.2.zip" />
 
 			<fileset file="cross.build.properties" />
+
+			<fileset file="pom.xml*" />
 		</delete>
 	</target>
 
