@@ -337,7 +337,7 @@
 	        url="https://github.com/kwhat/jnativehook"
 		>
 			<license name="GNU General Public License (GPL), Version 3.0" url="https://www.gnu.org/licenses/gpl-3.0.txt" />
-			<license name="GNU Lesser General Public License (LGPL), Version 3.0" url="https://www.gnu.org/licenses/gpl-3.0.txt" />
+			<license name="GNU Lesser General Public License (LGPL), Version 3.0" url="https://www.gnu.org/licenses/lgpl-3.0.txt" />
 
 			<developer name="Alexander Barker" email="alex@1stleg.com" organization="Personal" organizationurl="https://github.com/kwhat/" />
 
