@@ -185,7 +185,7 @@
 
 		<get src="https://github.com/kwhat/jnativehook/archive/master.zip" dest="jnativehook-2.1.zip" verbose="true" />
 		<unzip src="jnativehook-2.1.zip" dest="jnativehook">
-			<mapper type="glob" from="jnativehook-2.1/*" to="*"/>
+			<mapper type="glob" from="jnativehook-master/*" to="*"/>
 		</unzip>
 		
 		<!-- Fix clock skew. -->
