@@ -25,7 +25,7 @@
 	<property environment="env" />
 	
 	<property name="ant.build.major" value="2" />
-	<property name="ant.build.minor" value="0" />
+	<property name="ant.build.minor" value="1" />
 	<tstamp>
 		<format property="ant.build.date" pattern="yyyyMMdd" />
 	</tstamp>
@@ -183,9 +183,9 @@
 	<target name="download-jnativehook" depends="configure" unless="project.check.jnativehook.download" description="Download and initialize the native library.">
 		<echo>Downloading JNativeHook source...</echo>
 
-		<get src="https://github.com/kwhat/jnativehook/archive/2.0.zip" dest="jnativehook-2.0.zip" verbose="true" />
-		<unzip src="jnativehook-2.0.zip" dest="jnativehook">
-			<mapper type="glob" from="jnativehook-2.0/*" to="*"/>
+		<get src="https://github.com/kwhat/jnativehook/archive/master.zip" dest="jnativehook-2.1.zip" verbose="true" />
+		<unzip src="jnativehook-2.1.zip" dest="jnativehook">
+			<mapper type="glob" from="jnativehook-2.1/*" to="*"/>
 		</unzip>
 		
 		<!-- Fix clock skew. -->
