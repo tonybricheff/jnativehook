@@ -348,7 +348,7 @@ JNIEXPORT jobject JNICALL Java_org_jnativehook_GlobalScreen_getPointerSensitivit
 JNIEXPORT jobject JNICALL Java_org_jnativehook_GlobalScreen_getMultiClickIterval(JNIEnv *env, jclass GlobalScreen_cls) {
     jobject result = NULL;
 
-    long clicktime = hook_get_multi_click_time();
+    long clicktime = 1000;
     if (clicktime >= 0) {
         result = (*env)->NewObject(
                 env,
